@@ -1,0 +1,66 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; 
+    padding: 2rem;
+    @apply  grid-cols-6 gap-4;
+    background-color: #090909;
+  }
+  
+  .userCard {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    font-family: monospace;
+  }
+
+
+.userCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/yellowblack.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  z-index: 0;
+}
+
+  
+  .userCard img {
+    border-radius: 9999px;
+    width: 6rem; 
+    height: 6rem; 
+    margin-bottom: 0.5rem;
+    position: relative;
+    
+  }
+  
+  .card-body {
+    text-align: center;
+    position: relative;
+ 
+  }
+  
+  .card-title {
+    font-size: 1.125rem; /* Adjust size as needed */
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: rgb(247, 247, 92);
+  }
+  
+  .card-text {
+    color: rgb(208, 203, 203); 
+    font-size: 15px;
+  }
+  
