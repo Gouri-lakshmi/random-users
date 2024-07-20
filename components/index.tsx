@@ -50,6 +50,7 @@ const RandomUsers: React.FC = () => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
+  // Function to fetch users from the API
   const fetchUsers = async (page: number) => {
     if (loading || !hasMore) return;
 
@@ -73,11 +74,13 @@ const RandomUsers: React.FC = () => {
     }
   };
 
+  // Initial fetch of users on component mount
   useEffect(() => {
     fetchUsers(page);
     setPage((prevPage) => prevPage + 1);
   }, []);
 
+  //Event handler for scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.scrollHeight - 5) {
@@ -92,6 +95,7 @@ const RandomUsers: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [page, hasMore, loading]);
 
+  //function for opening  & closing modal
   const openModal = (user: User) => {
     setSelectedUser(user);
   };
