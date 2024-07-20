@@ -11,12 +11,12 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
-
+    cursor: not-allowed;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin:  auto;
+    margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 100%;
@@ -24,25 +24,47 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: fangsong;
-    h2{
+    background-image: url('/colorful.jpg');
+    background-size: cover;
+    background-position: center;
+
+    h2 {
         font-family: fangsong;
         font-weight: 600;
+        font-size: 20px;
     }
 }
-.modal-detail{
+
+.modal-detail {
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 360px) {
+        flex-direction: column;
+    }
 }
-.more-details{
-  margin-top: 1rem;  
-  display: grid;
-  gap: 0.5rem;
+
+.user-details {
+    display: grid;
+    gap: 0.4rem;
 }
+
+.more-details {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: -8px;
+
+    @media (max-width: 360px) {
+        margin-left: 20px;
+    }
 }
 
 .close:hover,

@@ -20,17 +20,21 @@ const UserModal: React.FC<UserModalProps> = ({ user, onClose }) => {
             <img src={user.picture.large} alt={`${user.name.first} ${user.name.last}`} />
             <div className='user-details'>
               <h2>{user.name.title} {user.name.first} {user.name.last}</h2>
-              <p>Age: {user.dob.age}</p>
-              <p>Gender: {user.gender}</p>
+              <p>Age : {user.dob.age}</p>
+              <p>Gender : {user.gender}</p>
               <p>Phone : {user.phone}</p>
-              <p>Email: {user.email}</p>
+              <p>Email : {user.email}</p>
             </div>
           </div>
           <div className='more-details'>
-          <p>Date of Register :{user.registered.date}</p>
-          <p>SSDID : {user.id.value}</p>
-          <p>Country : {user.location.country}</p>
-          <p>Location:{user.location.street.name},{user.location.postcode}, {user.location.city}, {user.location.state}</p>
+            {user.registered.date ? (
+            <p>Date of Register : {user.registered.date}</p>):null}
+            {user.id.value ? (
+              <p>SSDID : {user.id.value}</p>
+            ) : null}
+            {user.location.country ? (
+            <p>Country : {user.location.country}</p>):null}
+            <p>Location : {user.location.street.name},{user.location.postcode}, {user.location.city}, {user.location.state}</p>
           </div>
         </div>
       </div>
